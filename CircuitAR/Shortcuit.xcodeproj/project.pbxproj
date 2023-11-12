@@ -16,6 +16,7 @@
 		30A5616D2B002A7B00237784 /* ComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A5616C2B002A7B00237784 /* ComponentModel.swift */; };
 		30A5616F2B002E8100237784 /* ResistorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A5616E2B002E8100237784 /* ResistorEntity.swift */; };
 		30A561712B0039ED00237784 /* WireEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A561702B0039ED00237784 /* WireEntity.swift */; };
+		8165B1912B00AFC5009EFBAC /* PrebuiltView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8165B1902B00AFC5009EFBAC /* PrebuiltView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		30A5616C2B002A7B00237784 /* ComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentModel.swift; sourceTree = "<group>"; };
 		30A5616E2B002E8100237784 /* ResistorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorEntity.swift; sourceTree = "<group>"; };
 		30A561702B0039ED00237784 /* WireEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireEntity.swift; sourceTree = "<group>"; };
+		8165B1902B00AFC5009EFBAC /* PrebuiltView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrebuiltView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				307090BE2AFF42AE005A4D32 /* ContentView.swift */,
 				307090CE2AFF474E005A4D32 /* CircuitBuildingView.swift */,
+				8165B1902B00AFC5009EFBAC /* PrebuiltView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				30A5616B2B00273000237784 /* BatteryEntity.swift in Sources */,
 				307090BD2AFF42AE005A4D32 /* AppDelegate.swift in Sources */,
 				30A5616F2B002E8100237784 /* ResistorEntity.swift in Sources */,
+				8165B1912B00AFC5009EFBAC /* PrebuiltView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,8 +327,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CircuitAR/Preview Content\"";
-				DEVELOPMENT_TEAM = UG27AN3F2U;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = R55NP9ZGB9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -339,8 +343,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = RizkiMiftha.CircuitAR;
+				PRODUCT_BUNDLE_IDENTIFIER = lukegwimm.CircuitAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -354,8 +359,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CircuitAR/Preview Content\"";
-				DEVELOPMENT_TEAM = UG27AN3F2U;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = R55NP9ZGB9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -370,8 +375,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = RizkiMiftha.CircuitAR;
+				PRODUCT_BUNDLE_IDENTIFIER = lukegwimm.CircuitAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
