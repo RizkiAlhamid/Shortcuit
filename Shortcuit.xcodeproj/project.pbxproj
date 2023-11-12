@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		307090B92AFF42AE005A4D32 /* CircuitAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircuitAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		307090B92AFF42AE005A4D32 /* Shortcuit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shortcuit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307090BC2AFF42AE005A4D32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		307090BE2AFF42AE005A4D32 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		307090C02AFF42B1005A4D32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 		307090B02AFF42AD005A4D32 = {
 			isa = PBXGroup;
 			children = (
-				307090BB2AFF42AE005A4D32 /* CircuitAR */,
+				307090BB2AFF42AE005A4D32 /* Shortcuit */,
 				307090BA2AFF42AE005A4D32 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,12 +53,12 @@
 		307090BA2AFF42AE005A4D32 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				307090B92AFF42AE005A4D32 /* CircuitAR.app */,
+				307090B92AFF42AE005A4D32 /* Shortcuit.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		307090BB2AFF42AE005A4D32 /* CircuitAR */ = {
+		307090BB2AFF42AE005A4D32 /* Shortcuit */ = {
 			isa = PBXGroup;
 			children = (
 				307090CD2AFF470A005A4D32 /* ViewModels */,
@@ -69,7 +69,7 @@
 				307090C02AFF42B1005A4D32 /* Assets.xcassets */,
 				307090C22AFF42B1005A4D32 /* Preview Content */,
 			);
-			path = CircuitAR;
+			path = Shortcuit;
 			sourceTree = "<group>";
 		};
 		307090C22AFF42B1005A4D32 /* Preview Content */ = {
@@ -117,9 +117,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		307090B82AFF42AE005A4D32 /* CircuitAR */ = {
+		307090B82AFF42AE005A4D32 /* Shortcuit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 307090C72AFF42B1005A4D32 /* Build configuration list for PBXNativeTarget "CircuitAR" */;
+			buildConfigurationList = 307090C72AFF42B1005A4D32 /* Build configuration list for PBXNativeTarget "Shortcuit" */;
 			buildPhases = (
 				307090B52AFF42AE005A4D32 /* Sources */,
 				307090B62AFF42AE005A4D32 /* Frameworks */,
@@ -129,9 +129,9 @@
 			);
 			dependencies = (
 			);
-			name = CircuitAR;
+			name = Shortcuit;
 			productName = CircuitAR;
-			productReference = 307090B92AFF42AE005A4D32 /* CircuitAR.app */;
+			productReference = 307090B92AFF42AE005A4D32 /* Shortcuit.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -149,7 +149,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 307090B42AFF42AD005A4D32 /* Build configuration list for PBXProject "CircuitAR" */;
+			buildConfigurationList = 307090B42AFF42AD005A4D32 /* Build configuration list for PBXProject "Shortcuit" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -162,7 +162,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				307090B82AFF42AE005A4D32 /* CircuitAR */,
+				307090B82AFF42AE005A4D32 /* Shortcuit */,
 			);
 		};
 /* End PBXProject section */
@@ -381,7 +381,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		307090B42AFF42AD005A4D32 /* Build configuration list for PBXProject "CircuitAR" */ = {
+		307090B42AFF42AD005A4D32 /* Build configuration list for PBXProject "Shortcuit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				307090C52AFF42B1005A4D32 /* Debug */,
@@ -390,7 +390,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		307090C72AFF42B1005A4D32 /* Build configuration list for PBXNativeTarget "CircuitAR" */ = {
+		307090C72AFF42B1005A4D32 /* Build configuration list for PBXNativeTarget "Shortcuit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				307090C82AFF42B1005A4D32 /* Debug */,
