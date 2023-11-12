@@ -10,25 +10,30 @@ import RealityKit
 import Combine
 import SwiftUI
 
-class BatteryEntity: Entity, HasModel, HasAnchoring, HasCollision {
+class BatteryEntity: Entity, HasModel, HasAnchoring, HasCollision, CircuitComponentEntity {
     var collisionSubs: [Cancellable] = []
+    var modelEntity: ModelEntity?
     
     required init(color: UIColor) {
         super.init()
         
+        // load uzdz
+        guard let modelEntity = try? Entity.loadModel(named: "battery") else {
+            fatalError("Failed to load the model from Battery.usdz")
+        }
+        modelEntity.move(to: Transform(scale: [4,4,4]), relativeTo: nil)
+        
+        // set up collision
         self.components[CollisionComponent] = CollisionComponent(
-            shapes: [.generateSphere(radius: 0.25)],
+            shapes: [.generateSphere(radius: 0.15)],
             mode: .trigger,
           filter: .sensor
         )
+        // set up component
+        //modelEntity.model?.materials = [SimpleMaterial(color: color, isMetallic: false)]
         
-        self.components[ModelComponent] = ModelComponent(
-            mesh: .generateSphere(radius: 0.25),
-            materials: [SimpleMaterial(
-                color: color,
-                isMetallic: false)
-            ]
-        )
+        self.modelEntity = modelEntity
+        self.addChild(modelEntity)
     }
     
     convenience init(color: UIColor, position: SIMD3<Float>) {
@@ -38,26 +43,6 @@ class BatteryEntity: Entity, HasModel, HasAnchoring, HasCollision {
     
     required init() {
         fatalError("init() has not been implemented")
-    }
-    
-    func addCollisions() {
-        guard let scene = self.scene else {
-            return
-        }
-        
-        collisionSubs.append(scene.subscribe(to: CollisionEvents.Began.self, on: self) { event in
-            guard let boxA = event.entityA as? BatteryEntity else {
-                return
-            }
-            
-            boxA.model?.materials = [SimpleMaterial(color: .red, isMetallic: false)]
-        })
-        collisionSubs.append(scene.subscribe(to: CollisionEvents.Ended.self, on: self) { event in
-            guard let boxA = event.entityA as? BatteryEntity else {
-                return
-            }
-            boxA.model?.materials = [SimpleMaterial(color: .yellow, isMetallic: false)]
-        })
     }
     
 }

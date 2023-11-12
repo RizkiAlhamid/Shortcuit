@@ -10,7 +10,7 @@ import RealityKit
 import Combine
 import SwiftUI
 
-class WireEntity: Entity, HasModel, HasAnchoring, HasCollision {
+class WireEntity: Entity, HasModel, HasAnchoring, HasCollision, CircuitComponentEntity {
     var collisionSubs: [Cancellable] = []
     
     required init(color: UIColor) {
@@ -51,14 +51,30 @@ class WireEntity: Entity, HasModel, HasAnchoring, HasCollision {
             }
             
             boxA.model?.materials = [SimpleMaterial(color: .red, isMetallic: false)]
-            boxB.model?.materials = [SimpleMaterial(color: .red, isMetallic: false)]
+            boxB.modelEntity?.model?.materials = [SimpleMaterial(color: .red, isMetallic: false)]
         })
         collisionSubs.append(scene.subscribe(to: CollisionEvents.Ended.self, on: self) { event in
             guard let boxA = event.entityA as? WireEntity, let boxB = event.entityB as? BatteryEntity else {
                 return
             }
             boxA.model?.materials = [SimpleMaterial(color: .yellow, isMetallic: false)]
-            boxB.model?.materials = [SimpleMaterial(color: .yellow, isMetallic: false)]
+            boxB.modelEntity?.model?.materials = [SimpleMaterial(color: .yellow, isMetallic: false)]
+        })
+        
+        collisionSubs.append(scene.subscribe(to: CollisionEvents.Began.self, on: self) { event in
+            guard let boxA = event.entityA as? WireEntity, let boxB = event.entityB as? ResistorEntity else {
+                return
+            }
+            
+            boxA.model?.materials = [SimpleMaterial(color: .blue, isMetallic: false)]
+            boxB.modelEntity?.model?.materials = [SimpleMaterial(color: .blue, isMetallic: false)]
+        })
+        collisionSubs.append(scene.subscribe(to: CollisionEvents.Ended.self, on: self) { event in
+            guard let boxA = event.entityA as? WireEntity, let boxB = event.entityB as? ResistorEntity else {
+                return
+            }
+            boxA.model?.materials = [SimpleMaterial(color: .yellow, isMetallic: false)]
+            boxB.modelEntity?.model?.materials = [SimpleMaterial(color: .yellow, isMetallic: false)]
         })
     }
     

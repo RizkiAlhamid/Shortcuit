@@ -11,12 +11,13 @@ import ARKit
 import Combine
 
 struct CircuitBuildingView: View {
+    @ObservedObject private var cbViewModel = CircuitBuildingViewModel()
     @State private var selectedComponentType: ComponentType?
     @State private var confirmAdd = false
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            ARViewContainer(selectedComponentType: $selectedComponentType, confirmAdd: $confirmAdd)
+            ARViewContainer(cbViewModel: cbViewModel, selectedComponentType: $selectedComponentType, confirmAdd: $confirmAdd)
             
             if selectedComponentType != nil {
                 PlacementButtonsView(selectedComponentType: $selectedComponentType, confirmAdd: $confirmAdd)
@@ -37,6 +38,7 @@ enum ComponentType {
 }
 
 struct ARViewContainer: UIViewRepresentable {
+    @ObservedObject var cbViewModel: CircuitBuildingViewModel
     @Binding var selectedComponentType: ComponentType?
     @Binding var confirmAdd: Bool
 
@@ -45,6 +47,7 @@ struct ARViewContainer: UIViewRepresentable {
         let config = ARWorldTrackingConfiguration()
         config.planeDetection = .horizontal
         config.environmentTexturing = .automatic
+        
         arView.session.run(config)
         return arView
     }
@@ -54,21 +57,19 @@ struct ARViewContainer: UIViewRepresentable {
             let position = uiView.ray(through: uiView.center)
             if selectedComponentType == .battery {
                 print("DEBUG: adding model to scene - Battery)")
-                let battery = BatteryEntity(color: .darkGray, position: position!.direction)
-                uiView.scene.anchors.append(battery)
-                uiView.installGestures(.all, for: battery)
-                //battery.addCollisions()
+                cbViewModel.createBatteryEntity(arView: uiView)
+                cbViewModel.generateCurrentEntity(arView: uiView)
+                
             } else if selectedComponentType == .resistor {
                 print("DEBUG: adding model to scene - Resistor")
-                let resistor = ResistorEntity(color: .white, position: position!.direction)
-                uiView.scene.anchors.append(resistor)
-                uiView.installGestures(.all, for: resistor)
-                //resistor.addCollisions()
+                cbViewModel.createResistorEntity(arView: uiView)
+                
             } else if selectedComponentType == .wire {
                 print("DEBUG: adding model to scene - Wire")
                 let wire = WireEntity(color: .cyan, position: position!.direction)
                 uiView.scene.anchors.append(wire)
                 uiView.installGestures(.all, for: wire)
+                cbViewModel.addEntity(wire)
                 wire.addCollisions()
             }
             DispatchQueue.main.async {
@@ -76,7 +77,9 @@ struct ARViewContainer: UIViewRepresentable {
                 selectedComponentType = nil
             }
         }
+        
     }
+    
 }
 
 struct ComponentPickerView: View {

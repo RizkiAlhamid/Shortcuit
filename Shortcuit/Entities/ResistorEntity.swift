@@ -10,25 +10,28 @@ import RealityKit
 import Combine
 import SwiftUI
 
-class ResistorEntity: Entity, HasModel, HasAnchoring, HasCollision {
+class ResistorEntity: Entity, HasModel, HasAnchoring, HasCollision, CircuitComponentEntity {
     var collisionSubs: [Cancellable] = []
+    var modelEntity: ModelEntity?
     
     required init(color: UIColor) {
         super.init()
         
+        // load uzdz
+        guard let modelEntity = try? Entity.loadModel(named: "teapot") else {
+            fatalError("Failed to load the model from Battery.usdz")
+        }
+        
+        // set up collision
         self.components[CollisionComponent] = CollisionComponent(
-            shapes: [.generateBox(size: [0.3, 0.3, 0.3])],
+            shapes: [.generateSphere(radius: 0.25)],
             mode: .trigger,
           filter: .sensor
         )
         
-        self.components[ModelComponent] = ModelComponent(
-            mesh: .generateBox(size: [0.3, 0.3, 0.3]),
-            materials: [SimpleMaterial(
-                color: color,
-                isMetallic: false)
-            ]
-        )
+        modelEntity.model?.materials = [SimpleMaterial(color: color, isMetallic: false)]
+        self.modelEntity = modelEntity
+        self.addChild(modelEntity)
     }
     
     convenience init(color: UIColor, position: SIMD3<Float>) {
@@ -38,26 +41,6 @@ class ResistorEntity: Entity, HasModel, HasAnchoring, HasCollision {
     
     required init() {
         fatalError("init() has not been implemented")
-    }
-    
-    func addCollisions() {
-        guard let scene = self.scene else {
-            return
-        }
-        
-        collisionSubs.append(scene.subscribe(to: CollisionEvents.Began.self, on: self) { event in
-            guard let boxA = event.entityA as? ResistorEntity else {
-                return
-            }
-            
-            boxA.model?.materials = [SimpleMaterial(color: .red, isMetallic: false)]
-        })
-        collisionSubs.append(scene.subscribe(to: CollisionEvents.Ended.self, on: self) { event in
-            guard let boxA = event.entityA as? ResistorEntity else {
-                return
-            }
-            boxA.model?.materials = [SimpleMaterial(color: .yellow, isMetallic: false)]
-        })
     }
     
 }

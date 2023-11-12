@@ -12,10 +12,16 @@
 		307090C12AFF42B1005A4D32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307090C02AFF42B1005A4D32 /* Assets.xcassets */; };
 		307090C42AFF42B1005A4D32 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307090C32AFF42B1005A4D32 /* Preview Assets.xcassets */; };
 		307090CF2AFF474E005A4D32 /* CircuitBuildingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307090CE2AFF474E005A4D32 /* CircuitBuildingView.swift */; };
+		309DDF372B00971500DF3FE8 /* CircuitComponentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309DDF362B00971500DF3FE8 /* CircuitComponentEntity.swift */; };
+		309DDF392B0097D400DF3FE8 /* CircuitBuildingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309DDF382B0097D400DF3FE8 /* CircuitBuildingViewModel.swift */; };
+		309DDF3B2B009DAE00DF3FE8 /* CurrentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309DDF3A2B009DAE00DF3FE8 /* CurrentEntity.swift */; };
 		30A5616B2B00273000237784 /* BatteryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A5616A2B00273000237784 /* BatteryEntity.swift */; };
-		30A5616D2B002A7B00237784 /* ComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A5616C2B002A7B00237784 /* ComponentModel.swift */; };
 		30A5616F2B002E8100237784 /* ResistorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A5616E2B002E8100237784 /* ResistorEntity.swift */; };
 		30A561712B0039ED00237784 /* WireEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A561702B0039ED00237784 /* WireEntity.swift */; };
+		30DDD6BF2B00B8E500A22F97 /* teapot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 30DDD6BE2B00B8E500A22F97 /* teapot.usdz */; };
+		30DDD6C12B00BE0D00A22F97 /* CircuitScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DDD6C02B00BE0D00A22F97 /* CircuitScanningView.swift */; };
+		30DDD6C32B00CC0300A22F97 /* Circuit.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 30DDD6C22B00CC0300A22F97 /* Circuit.usdz */; };
+		30DDD6C52B00D10300A22F97 /* battery.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 30DDD6C42B00D10300A22F97 /* battery.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,10 +31,16 @@
 		307090C02AFF42B1005A4D32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		307090C32AFF42B1005A4D32 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		307090CE2AFF474E005A4D32 /* CircuitBuildingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitBuildingView.swift; sourceTree = "<group>"; };
+		309DDF362B00971500DF3FE8 /* CircuitComponentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitComponentEntity.swift; sourceTree = "<group>"; };
+		309DDF382B0097D400DF3FE8 /* CircuitBuildingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitBuildingViewModel.swift; sourceTree = "<group>"; };
+		309DDF3A2B009DAE00DF3FE8 /* CurrentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentEntity.swift; sourceTree = "<group>"; };
 		30A5616A2B00273000237784 /* BatteryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryEntity.swift; sourceTree = "<group>"; };
-		30A5616C2B002A7B00237784 /* ComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentModel.swift; sourceTree = "<group>"; };
 		30A5616E2B002E8100237784 /* ResistorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResistorEntity.swift; sourceTree = "<group>"; };
 		30A561702B0039ED00237784 /* WireEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireEntity.swift; sourceTree = "<group>"; };
+		30DDD6BE2B00B8E500A22F97 /* teapot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = teapot.usdz; sourceTree = "<group>"; };
+		30DDD6C02B00BE0D00A22F97 /* CircuitScanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitScanningView.swift; sourceTree = "<group>"; };
+		30DDD6C22B00CC0300A22F97 /* Circuit.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Circuit.usdz; sourceTree = "<group>"; };
+		30DDD6C42B00D10300A22F97 /* battery.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = battery.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +95,9 @@
 		307090CA2AFF46D3005A4D32 /* 3DModels */ = {
 			isa = PBXGroup;
 			children = (
+				30DDD6C22B00CC0300A22F97 /* Circuit.usdz */,
+				30DDD6BE2B00B8E500A22F97 /* teapot.usdz */,
+				30DDD6C42B00D10300A22F97 /* battery.usdz */,
 			);
 			path = 3DModels;
 			sourceTree = "<group>";
@@ -90,10 +105,11 @@
 		307090CB2AFF46FC005A4D32 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				30A5616C2B002A7B00237784 /* ComponentModel.swift */,
 				30A5616A2B00273000237784 /* BatteryEntity.swift */,
 				30A5616E2B002E8100237784 /* ResistorEntity.swift */,
 				30A561702B0039ED00237784 /* WireEntity.swift */,
+				309DDF362B00971500DF3FE8 /* CircuitComponentEntity.swift */,
+				309DDF3A2B009DAE00DF3FE8 /* CurrentEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -103,6 +119,7 @@
 			children = (
 				307090BE2AFF42AE005A4D32 /* ContentView.swift */,
 				307090CE2AFF474E005A4D32 /* CircuitBuildingView.swift */,
+				30DDD6C02B00BE0D00A22F97 /* CircuitScanningView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -110,6 +127,7 @@
 		307090CD2AFF470A005A4D32 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				309DDF382B0097D400DF3FE8 /* CircuitBuildingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -172,8 +190,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30DDD6BF2B00B8E500A22F97 /* teapot.usdz in Resources */,
 				307090C42AFF42B1005A4D32 /* Preview Assets.xcassets in Resources */,
 				307090C12AFF42B1005A4D32 /* Assets.xcassets in Resources */,
+				30DDD6C52B00D10300A22F97 /* battery.usdz in Resources */,
+				30DDD6C32B00CC0300A22F97 /* Circuit.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,11 +206,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				307090CF2AFF474E005A4D32 /* CircuitBuildingView.swift in Sources */,
-				30A5616D2B002A7B00237784 /* ComponentModel.swift in Sources */,
+				309DDF372B00971500DF3FE8 /* CircuitComponentEntity.swift in Sources */,
 				30A561712B0039ED00237784 /* WireEntity.swift in Sources */,
 				307090BF2AFF42AE005A4D32 /* ContentView.swift in Sources */,
 				30A5616B2B00273000237784 /* BatteryEntity.swift in Sources */,
+				30DDD6C12B00BE0D00A22F97 /* CircuitScanningView.swift in Sources */,
 				307090BD2AFF42AE005A4D32 /* AppDelegate.swift in Sources */,
+				309DDF392B0097D400DF3FE8 /* CircuitBuildingViewModel.swift in Sources */,
+				309DDF3B2B009DAE00DF3FE8 /* CurrentEntity.swift in Sources */,
 				30A5616F2B002E8100237784 /* ResistorEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,7 +347,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CircuitAR/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Shortcuit/Preview Content\"";
 				DEVELOPMENT_TEAM = UG27AN3F2U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -339,7 +363,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = RizkiMiftha.CircuitAR;
+				PRODUCT_BUNDLE_IDENTIFIER = RizkiMiftha.Shortcuit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -354,7 +378,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CircuitAR/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Shortcuit/Preview Content\"";
 				DEVELOPMENT_TEAM = UG27AN3F2U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -370,7 +394,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = RizkiMiftha.CircuitAR;
+				PRODUCT_BUNDLE_IDENTIFIER = RizkiMiftha.Shortcuit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

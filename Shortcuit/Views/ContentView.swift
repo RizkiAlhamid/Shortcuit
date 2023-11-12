@@ -20,7 +20,7 @@ struct ContentView : View {
                         .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray))
                 }
                 NavigationLink {
-                    
+                    CircuitScanningView()
                 } label: {
                     Text("Scan Circuit")
                         .padding()
