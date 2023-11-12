@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300447A02B0124A500F1FF2A /* Resistor.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3004479F2B0124A500F1FF2A /* Resistor.usdz */; };
 		307090BD2AFF42AE005A4D32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307090BC2AFF42AE005A4D32 /* AppDelegate.swift */; };
 		307090BF2AFF42AE005A4D32 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307090BE2AFF42AE005A4D32 /* ContentView.swift */; };
 		307090C12AFF42B1005A4D32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307090C02AFF42B1005A4D32 /* Assets.xcassets */; };
@@ -22,11 +23,11 @@
 		30DDD6C12B00BE0D00A22F97 /* CircuitScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DDD6C02B00BE0D00A22F97 /* CircuitScanningView.swift */; };
 		30DDD6C52B00D10300A22F97 /* battery.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 30DDD6C42B00D10300A22F97 /* battery.usdz */; };
 		30F608F92B00DA6900F7B273 /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F608F82B00DA6900F7B273 /* AboutUsView.swift */; };
-		30F608FB2B00DC7A00F7B273 /* Resistor.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 30F608FA2B00DC7A00F7B273 /* Resistor.usdz */; };
 		30F608FD2B00E35900F7B273 /* Circuit.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 30F608FC2B00E35900F7B273 /* Circuit.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3004479F2B0124A500F1FF2A /* Resistor.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Resistor.usdz; sourceTree = "<group>"; };
 		307090B92AFF42AE005A4D32 /* Shortcuit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shortcuit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		307090BC2AFF42AE005A4D32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		307090BE2AFF42AE005A4D32 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		30DDD6C02B00BE0D00A22F97 /* CircuitScanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitScanningView.swift; sourceTree = "<group>"; };
 		30DDD6C42B00D10300A22F97 /* battery.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = battery.usdz; sourceTree = "<group>"; };
 		30F608F82B00DA6900F7B273 /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
-		30F608FA2B00DC7A00F7B273 /* Resistor.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Resistor.usdz; sourceTree = "<group>"; };
 		30F608FC2B00E35900F7B273 /* Circuit.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Circuit.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,7 +102,7 @@
 				30F608FC2B00E35900F7B273 /* Circuit.usdz */,
 				30DDD6BE2B00B8E500A22F97 /* teapot.usdz */,
 				30DDD6C42B00D10300A22F97 /* battery.usdz */,
-				30F608FA2B00DC7A00F7B273 /* Resistor.usdz */,
+				3004479F2B0124A500F1FF2A /* Resistor.usdz */,
 			);
 			path = 3DModels;
 			sourceTree = "<group>";
@@ -200,8 +200,8 @@
 				30F608FD2B00E35900F7B273 /* Circuit.usdz in Resources */,
 				307090C42AFF42B1005A4D32 /* Preview Assets.xcassets in Resources */,
 				307090C12AFF42B1005A4D32 /* Assets.xcassets in Resources */,
+				300447A02B0124A500F1FF2A /* Resistor.usdz in Resources */,
 				30DDD6C52B00D10300A22F97 /* battery.usdz in Resources */,
-				30F608FB2B00DC7A00F7B273 /* Resistor.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

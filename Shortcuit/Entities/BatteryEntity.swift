@@ -23,16 +23,15 @@ class BatteryEntity: Entity, HasModel, HasAnchoring, HasCollision, CircuitCompon
             fatalError("Failed to load the model from Battery.usdz")
         }
         modelEntity.move(to: Transform(scale: [4,4,4]), relativeTo: nil)
-        
+        modelEntity.move(to: Transform(yaw: 180 * .pi/180), relativeTo: modelEntity)
         // set up collision
         self.components[CollisionComponent] = CollisionComponent(
-            shapes: [.generateSphere(radius: 0.15)],
+            shapes: [.generateBox(size: [0.1, 0.1, 0.6])],
             mode: .trigger,
           filter: .sensor
         )
         // set up component
-        //modelEntity.model?.materials = [SimpleMaterial(color: color, isMetallic: false)]
-        
+        modelEntity.model?.materials = [SimpleMaterial(color: color, isMetallic: false)]
         self.modelEntity = modelEntity
         self.addChild(modelEntity)
     }
