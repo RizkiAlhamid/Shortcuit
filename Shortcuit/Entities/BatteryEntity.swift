@@ -13,6 +13,7 @@ import SwiftUI
 class BatteryEntity: Entity, HasModel, HasAnchoring, HasCollision, CircuitComponentEntity {
     var collisionSubs: [Cancellable] = []
     var modelEntity: ModelEntity?
+    var isConnected = false
     
     required init(color: UIColor) {
         super.init()

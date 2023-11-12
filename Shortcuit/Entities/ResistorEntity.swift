@@ -18,13 +18,14 @@ class ResistorEntity: Entity, HasModel, HasAnchoring, HasCollision, CircuitCompo
         super.init()
         
         // load uzdz
-        guard let modelEntity = try? Entity.loadModel(named: "teapot") else {
+        guard let modelEntity = try? Entity.loadModel(named: "battery") else {
             fatalError("Failed to load the model from Battery.usdz")
         }
+        modelEntity.move(to: Transform(scale: [4,4,4]), relativeTo: nil)
         
         // set up collision
         self.components[CollisionComponent] = CollisionComponent(
-            shapes: [.generateSphere(radius: 0.25)],
+            shapes: [.generateSphere(radius: 0.15)],
             mode: .trigger,
           filter: .sensor
         )

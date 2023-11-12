@@ -15,15 +15,13 @@ class WireEntity: Entity, HasModel, HasAnchoring, HasCollision, CircuitComponent
     
     required init(color: UIColor) {
         super.init()
-        
         self.components[CollisionComponent] = CollisionComponent(
-            shapes: [.generateBox(size: [0.2,0.2,0.8])],
+            shapes: [.generateBox(size: [0.1,0.1,0.4])],
             mode: .trigger,
           filter: .sensor
         )
-        
         self.components[ModelComponent] = ModelComponent(
-            mesh: .generateBox(size: [0.2,0.2,0.8]),
+            mesh: .generateBox(size: [0.1,0.1,0.4]),
             materials: [SimpleMaterial(
                 color: color,
                 isMetallic: false)
@@ -52,6 +50,7 @@ class WireEntity: Entity, HasModel, HasAnchoring, HasCollision, CircuitComponent
             
             boxA.model?.materials = [SimpleMaterial(color: .red, isMetallic: false)]
             boxB.modelEntity?.model?.materials = [SimpleMaterial(color: .red, isMetallic: false)]
+            boxB.isConnected = true
         })
         collisionSubs.append(scene.subscribe(to: CollisionEvents.Ended.self, on: self) { event in
             guard let boxA = event.entityA as? WireEntity, let boxB = event.entityB as? BatteryEntity else {
@@ -59,6 +58,7 @@ class WireEntity: Entity, HasModel, HasAnchoring, HasCollision, CircuitComponent
             }
             boxA.model?.materials = [SimpleMaterial(color: .yellow, isMetallic: false)]
             boxB.modelEntity?.model?.materials = [SimpleMaterial(color: .yellow, isMetallic: false)]
+            boxB.isConnected = false
         })
         
         collisionSubs.append(scene.subscribe(to: CollisionEvents.Began.self, on: self) { event in

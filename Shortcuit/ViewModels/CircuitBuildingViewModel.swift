@@ -38,11 +38,11 @@ class CircuitBuildingViewModel: ObservableObject {
         return positions
     }
     
-    func generateCurrentEntity(arView: ARView) {
-        let position = arView.ray(through: arView.center)
-        let current = CurrentEntity(color: .yellow, position: position!.direction)
+    func generateCurrentEntity(arView: ARView, position: SIMD3<Float>) {
+        //let position = arView.ray(through: arView.center)
+        let current = CurrentEntity(color: .yellow, position: position)
         arView.scene.anchors.append(current)
-        let coordinate = position!.direction + [0,0.3,0]
+        let coordinate = position + [0,0.3,0]
         current.move(to: Transform(translation: coordinate), relativeTo: nil, duration: 2)
     }
     
@@ -69,9 +69,17 @@ class CircuitBuildingViewModel: ObservableObject {
     func createResistorEntity(arView: ARView) {
         let position = arView.ray(through: arView.center)
         let resistor = ResistorEntity(color: .blue, position: position!.direction)
-        print("Battery position - \(resistor.position)")
+        print("Resistor position - \(resistor.position)")
         arView.scene.anchors.append(resistor)
         arView.installGestures(.all, for: resistor)
         addEntity(resistor)
+    }
+    
+    func checkCollision(arView: ARView) {
+        for circuitComponentEntity in circuitComponentEntities {
+            if let battery = circuitComponentEntity as? BatteryEntity, battery.isConnected {
+                generateCurrentEntity(arView: arView, position: battery.position)
+            }
+        }
     }
 }

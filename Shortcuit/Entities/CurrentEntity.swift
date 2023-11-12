@@ -15,7 +15,7 @@ class CurrentEntity: Entity, HasModel, HasCollision, HasAnchoring {
         super.init()
         
         self.components[ModelComponent] = ModelComponent(
-            mesh: .generateSphere(radius: 0.1),
+            mesh: .generateSphere(radius: 0.05),
             materials: [SimpleMaterial(
                 color: color,
                 isMetallic: false)

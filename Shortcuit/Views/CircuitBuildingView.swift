@@ -58,8 +58,6 @@ struct ARViewContainer: UIViewRepresentable {
             if selectedComponentType == .battery {
                 print("DEBUG: adding model to scene - Battery)")
                 cbViewModel.createBatteryEntity(arView: uiView)
-                cbViewModel.generateCurrentEntity(arView: uiView)
-                
             } else if selectedComponentType == .resistor {
                 print("DEBUG: adding model to scene - Resistor")
                 cbViewModel.createResistorEntity(arView: uiView)
@@ -77,7 +75,7 @@ struct ARViewContainer: UIViewRepresentable {
                 selectedComponentType = nil
             }
         }
-        
+        cbViewModel.checkCollision(arView: uiView)
     }
     
 }

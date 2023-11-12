@@ -10,100 +10,71 @@ import RealityKit
 import ARKit
 
 struct CircuitScanningView: View {
+    @State var confirmAdd = false
+    
     var body: some View {
-        CircuitScanningARViewContainer().edgesIgnoringSafeArea(.all)
+        ZStack(alignment: .bottom) {
+            CircuitScanningARViewContainer()
+                .edgesIgnoringSafeArea(.all)
+        }
     }
 }
 
 struct CircuitScanningARViewContainer: UIViewRepresentable {
     var arView = ARView(frame: .zero)
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(parent: self)
-    }
-    
-    class Coordinator: NSObject, ARSessionDelegate {
-        var parent: CircuitScanningARViewContainer
-        
-        init(parent: CircuitScanningARViewContainer) {
-            self.parent = parent
-        }
-        
-        func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
-            guard let imageAnchor = anchors[0] as? ARImageAnchor else {
-                print("Problems loading anchor.")
-                return
-            }
-            
-            // size of video plane depending of the image
-            let width = Float(imageAnchor.referenceImage.physicalSize.width * 1.03)
-            let height = Float(imageAnchor.referenceImage.physicalSize.height * 1.03)
-            
-            // Sets the aspect ratio of the video to be played, and the corner radius of the video
-            let circuitPlane = ModelEntity(mesh: .generatePlane(width: width, depth: height, cornerRadius: 0.3), materials: [SimpleMaterial(
-                color: .black,
-                isMetallic: false)
-            ])
-            guard let modelEntity = try? Entity.loadModel(named: "Circuit") else {
-                fatalError("Failed to load the model from Battery.usdz")
-            }
-            
-            // Assigns reference image that will be detected
-            if let imageName = imageAnchor.name, imageName == "circuit" {
-                let anchor = AnchorEntity(anchor: imageAnchor)
-                //let anchor = AnchorEntity()
-//                let position = parent.arView.ray(through: parent.arView.center)
-//                let anchor = AnchorEntity(world: position!.direction)
-                // Adds specified video to the anchor
-                parent.arView.installGestures(.all, for: modelEntity)
-                anchor.addChild(circuitPlane)
-                parent.arView.scene.addAnchor(anchor)
-            }
-        }
-        
-        // Checks for tracking status
-//        func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
-//            guard let imageAnchor = anchors[0] as? ARImageAnchor else {
-//                print("Problems loading anchor.")
-//                return
-//            }
-//            
-//            // Plays/pauses the video when tracked/loses tracking
-//            if imageAnchor.isTracked {
-//                //videoPlayer.play()
-//            } else {
-//                //videoPlayer.pause()
-//            }
-//        }
-    }
-    
+
     func makeUIView(context: Context) -> ARView {
-        guard let referenceImages = ARReferenceImage.referenceImages(
-            inGroupNamed: "AR Resources", bundle: nil)
-        else {
-            fatalError("Missing expected asset catalog resources.")
+        //let entity = ModelEntity(mesh: .generateBox(size: 0.1))
+        guard let modelEntity = try? Entity.loadModel(named: "Circuit") else {
+            fatalError("Failed to load the model from Battery.usdz")
         }
+        modelEntity.move(to: Transform(scale: [0.1,0.1,0.1]), relativeTo: modelEntity)
+        let rotation: Float = 90 * .pi / 180
+        modelEntity.move(to: Transform(yaw: rotation), relativeTo: modelEntity)
+        modelEntity.position += [-0.03, 0, 0.04]
+//        modelEntity.move(to: Transform(translation: [2, 0.3, 3]), relativeTo: nil)
+        let anchor = AnchorEntity(.image(group: "AR Resources", name: "circuit"))
+        //anchor.move(to: Transform(translation: newTranslation), relativeTo: anchor)
         
-        // Assigns coordinator to delegate the AR View
-        arView.session.delegate = context.coordinator
-        
-        let configuration = ARImageTrackingConfiguration()
-        configuration.isAutoFocusEnabled = true
-        configuration.trackingImages = referenceImages
-        configuration.maximumNumberOfTrackedImages = 1
-        
-        // Enables People Occulusion on supported iOS Devices
-        if ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentationWithDepth) {
-            configuration.frameSemantics.insert(.personSegmentationWithDepth)
-        } else {
-            print("People Segmentation not enabled.")
-        }
-        print("Screennnn")
-        arView.session.run(configuration)
+        modelEntity.setParent(anchor)
+        arView.scene.anchors.append(anchor)
         return arView
     }
     
-    func updateUIView(_ uiView: ARView, context: Context) {}
+    func updateUIView(_ uiView: ARView, context: Context) {
+    }
+}
+
+struct PlaceAnchorView: View {
+    @Binding var foundAnchor: Bool
+    @Binding var confirmAdd: Bool
+    
+    var body: some View {
+        HStack {
+            // Cancel Button
+            Button {
+                foundAnchor = false
+            } label: {
+                Image(systemName: "xmark")
+                    .frame(width: 60, height: 60)
+                    .font(.title)
+                    .background(Color.white.opacity(0.75))
+                    .cornerRadius(30)
+                    .padding(20)
+            }
+            Button {
+                confirmAdd = true
+            } label: {
+                Image(systemName: "checkmark")
+                    .frame(width: 60, height: 60)
+                    .font(.title)
+                    .background(Color.white.opacity(0.75))
+                    .cornerRadius(30)
+                    .padding(20)
+            }
+            
+        }
+    }
 }
 
 #Preview {
