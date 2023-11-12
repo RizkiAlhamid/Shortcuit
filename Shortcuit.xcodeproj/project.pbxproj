@@ -22,6 +22,7 @@
 		30DDD6C12B00BE0D00A22F97 /* CircuitScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DDD6C02B00BE0D00A22F97 /* CircuitScanningView.swift */; };
 		30DDD6C32B00CC0300A22F97 /* Circuit.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 30DDD6C22B00CC0300A22F97 /* Circuit.usdz */; };
 		30DDD6C52B00D10300A22F97 /* battery.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 30DDD6C42B00D10300A22F97 /* battery.usdz */; };
+		30F608F92B00DA6900F7B273 /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F608F82B00DA6900F7B273 /* AboutUsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		30DDD6C02B00BE0D00A22F97 /* CircuitScanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircuitScanningView.swift; sourceTree = "<group>"; };
 		30DDD6C22B00CC0300A22F97 /* Circuit.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Circuit.usdz; sourceTree = "<group>"; };
 		30DDD6C42B00D10300A22F97 /* battery.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = battery.usdz; sourceTree = "<group>"; };
+		30F608F82B00DA6900F7B273 /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				307090BE2AFF42AE005A4D32 /* ContentView.swift */,
 				307090CE2AFF474E005A4D32 /* CircuitBuildingView.swift */,
 				30DDD6C02B00BE0D00A22F97 /* CircuitScanningView.swift */,
+				30F608F82B00DA6900F7B273 /* AboutUsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				30A5616B2B00273000237784 /* BatteryEntity.swift in Sources */,
 				30DDD6C12B00BE0D00A22F97 /* CircuitScanningView.swift in Sources */,
 				307090BD2AFF42AE005A4D32 /* AppDelegate.swift in Sources */,
+				30F608F92B00DA6900F7B273 /* AboutUsView.swift in Sources */,
 				309DDF392B0097D400DF3FE8 /* CircuitBuildingViewModel.swift in Sources */,
 				309DDF3B2B009DAE00DF3FE8 /* CurrentEntity.swift in Sources */,
 				30A5616F2B002E8100237784 /* ResistorEntity.swift in Sources */,

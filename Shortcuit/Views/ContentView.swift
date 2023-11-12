@@ -11,22 +11,32 @@ import RealityKit
 struct ContentView : View {
     var body: some View {
         NavigationStack {
-            HStack {
-                NavigationLink {
-                    CircuitBuildingView()
-                } label: {
+            VStack(spacing: 20) {
+                Text("Shortcuit") // Display the project name
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.blue)
+                
+                NavigationLink(destination: CircuitBuildingView()) {
                     Text("Build Circuit")
                         .padding()
-                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray))
+                        .foregroundColor(.white)
+                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue))
                 }
-                NavigationLink {
-                    CircuitScanningView()
-                } label: {
+                
+                NavigationLink(destination: CircuitScanningView()) {
                     Text("Scan Circuit")
                         .padding()
-                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray))
+                        .foregroundColor(.white)
+                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue))
                 }
-
+                
+                NavigationLink(destination: AboutUsView()) {
+                    Image(systemName: "info.circle")
+                        .font(.title)
+                        .foregroundColor(.blue)
+                        .padding()
+                }
             }
         }
     }
